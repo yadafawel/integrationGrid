@@ -1,0 +1,71 @@
+$colorAll: #64a5e3;
+$bgAll: #db9df5;
+$bgTopLeftBotRight: #7176e3;
+$bgmm: #89abfa;
+$bgm: #9a79fd;
+$bgmtmb: #7ee7fd;
+
+*{
+    border: 2px solid $colorAll;
+    margin: 0;
+    background: $bgAll;
+}
+
+.grid-container{
+    height: 99vh;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33% 33% 33%;
+    gap: 5px 0px;
+    grid-template-areas: 
+    "top-left top-left . ."
+    ". middle-middle middle-middle ."
+    ". . bot-right bot-right";
+}
+
+.top-left{
+    grid-area: top-left;
+    background-color: $bgTopLeftBotRight;
+}
+
+.middle-middle{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 50%;
+    gap: 0px 0px;
+    grid-template-areas: 
+    " . middle . "
+    ". middle .";
+    grid-area: middle-middle;
+    background: $bgmm;
+}
+
+
+.middle{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 50%;
+    gap: 0px 1px;
+    grid-template-areas: 
+    "middle-top middle-top ."
+    ". middle-bot middle-bot";
+    grid-area: middle;
+    background: $bgm;
+}
+
+
+.middle-top{
+    grid-area: middle-top;
+    background-color: $bgmtmb;
+}
+
+.middle-bot{
+    grid-area: middle-bot;
+    background-color: $bgmtmb;
+}
+
+.bot-right{
+    grid-area: bot-right;
+    background-color: $bgTopLeftBotRight;
+}
